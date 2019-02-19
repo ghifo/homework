@@ -113,10 +113,10 @@ a:hover {
 a:visited {
     color: #767676;
 }
-.home a:visited, .column a:visited {
+.column a, .home a {
     color: white;
 }
-.column a, .home a {
+.home a:visited, .column a:visited {
     color: white;
 }
 /*---main-topics---*/

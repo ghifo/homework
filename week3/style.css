@@ -3,6 +3,7 @@
     padding:0;
     box-sizing: border-box;
     font-family: sans-serif;
+    list-style: none;
 }
 .logo {
     margin-left: auto;
@@ -13,6 +14,7 @@
 }
 .header {
     background-color: #01689b;
+    min-height: 70px;
     padding: 1.5rem;
 }
 .home  {
@@ -24,7 +26,7 @@
 .bar1, .bar2, .bar3 {
     height: 3px;
     background-color: white;
-    margin: 7.5px 0;
+    margin: 7px 0px;
     width: 30px;
     transition: 0.5s;
 }
@@ -40,35 +42,41 @@
     float: right;
     width: 35px;
 }
-.dropdown {
-    width: 100%;
+@media (min-width: 900px){
+    .dropbtn {
+        display: none;
+    }
 }
 .dropdown-content {
     display: none;
     overflow: auto;
-    z-index: 1;
 }
 .dropdown-content a {
     display: block;
-    background-color: #2980B9;
     color: white;
-    line-height: 3em;
-    border-bottom: 1px solid white;
+    line-height: 2em;
+    border-bottom: 1px white solid;
+    padding: 15px;
 }
-.dropdown-content a:first-child {
-    content: "";
-    border-top: 1px solid white;
-} 
 .show {
     display: block;
     width: 100%;
   }
   /*---search---*/
 .search {
-    line-height: 1.5em;
-    font-size: 1em;
+    position: relative;
     width: 100%;
-    padding-left: 1.5em;
+    min-height: 50px;
+    line-height: 1.5em;
+    padding: 0px 10px;
+    font-size: 1em;
+}
+@media (min-width: 900px){
+    .search {
+        position: absolute;
+        max-width: 350px;
+        margin: 80px 0px;
+    }
 }
 /*---main---*/
 .main {
@@ -77,14 +85,14 @@
     padding: 20px;
 }
 .show-box {
-    list-style: none;
     background-color: white;
     font-weight: bold;
     padding: 10px;
 }
-li.show-box:before {
-    content: " > ";
-    color: #01689b;
+@media (min-width: 900px){
+    .show-box {
+        max-width: 350px;
+    }
 }
 /*---copyright*/
 .copyright {
@@ -100,15 +108,15 @@ a {
     text-decoration: none;
 }
 a:hover {
-    text-decoration: none;
-}
-.decoration:hover {
     text-decoration: underline;
 }
 a:visited {
     color: #767676;
 }
-.home a:visited {
+.home a:visited, .column a:visited {
+    color: white;
+}
+.column a {
     color: white;
 }
 /*---main-topics---*/
@@ -126,7 +134,6 @@ a:visited {
         float: left;
         width: calc(100% / 4);
         min-height: 150px;
-        list-style: none;
     }
 }
 /*---brick---*/
@@ -167,12 +174,6 @@ a:visited {
     top: 50%;
     padding: 1%;
 }
-h3.symbol::before {
-    content: "↗";
-    display: inline-block;
-    font-size: small;
-    font-weight: bolder; 
-}
 /*---nieuws---*/
 .title {
     width: 100%;
@@ -184,9 +185,6 @@ h3.symbol::before {
     width: 100%;
     font-weight: bold;
     padding-left: 2%;
-}
-.more:before {
-    content: " > "; 
 }
 /*---box---*/
 .publication.aside {
@@ -226,15 +224,6 @@ h3.symbol::before {
     font-weight: lighter;
     justify-content: space-around;
 }
-.column a {
-    color: white;
-}
-.column a:visited {
-    color: white;
-}
-.decoration {
-    list-style: none;
-}
 .column h2 {  
     margin: 8px 0 5px 0;
     padding-top: 0;
@@ -244,35 +233,30 @@ h3.symbol::before {
 }
 .column {
     position: relative;
-    width: 50%;
-}
-@media (min-width: 900px){
-    .column {
-        width: 25%;
-    }
+    width: auto;
 }
 .payoff {
-    position: relative;
+    display: block;
     font-family: "RO Serif";
     font-style: italic;
     font-weight: normal;
-    margin-bottom: 20px;
+    width: 40%;
 }
-@media (min-width: 900px){
+@media (max-width: 700px){
     .payoff {
-        width: 50%;
+        width: 100%;
         font-size: 1.5em;
     }
 }
 /*---languages---*/
 .wrapper {
     text-align: center;
+    margin: 20px 10px;
 }
 .wrapper li {
     display: inline-block;
     float: none;
     width: auto;
-    font-size: small;
     margin: 5px 5px;
     padding: 5px 5px;
     border: 1px solid #b2dff5;
